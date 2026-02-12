@@ -1,0 +1,272 @@
+.countries-page-new {
+    background: #fff;
+    overflow-x: hidden;
+}
+
+/* Cinematic Hero - Consistent Palette */
+.hero-section-cinematic {
+    height: 70vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--navy-deep);
+    text-align: center;
+}
+
+.hero-bg {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+}
+
+.hero-bg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.cinematic-overlay {
+    position: absolute;
+    inset: 0;
+    background: 
+        linear-gradient(to bottom, rgba(11, 44, 60, 0.3) 0%, rgba(255, 255, 255, 0.5) 40%, rgba(255, 255, 255, 0.6) 60%, rgba(11, 44, 60, 0.4) 100%),
+        linear-gradient(135deg, rgba(30, 77, 99, 0.2) 0%, transparent 50%, rgba(30, 77, 99, 0.15) 100%);
+}
+
+.hero-pill {
+    background: rgba(30, 77, 99, 0.05);
+    backdrop-filter: blur(10px);
+    padding: 0.6rem 2rem;
+    border-radius: 50px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 4px;
+    color: var(--primary-color);
+    border: 1px solid rgba(30, 77, 99, 0.1);
+    display: inline-block;
+    margin-bottom: 2rem;
+}
+
+.hero-display-title {
+    font-family: var(--font-serif);
+    font-size: 3.5rem;
+    line-height: 1.1;
+    font-weight: 900;
+}
+
+/* Luxury Destinations Row */
+.destinations-luxury-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12rem;
+    padding: 150px 0;
+}
+
+.luxury-country-row {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 8rem;
+    align-items: center;
+}
+
+.luxury-country-row:nth-child(even) {
+    direction: rtl;
+}
+
+.luxury-country-row:nth-child(even) .luxury-country-content {
+    direction: ltr;
+}
+
+.luxury-country-image {
+    position: relative;
+    border-radius: 60px;
+    overflow: hidden;
+    height: 650px;
+    box-shadow: 0 50px 100px rgba(0,0,0,0.15);
+}
+
+.luxury-country-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 1.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.luxury-country-row:hover .luxury-country-image img {
+    transform: scale(1.08);
+}
+
+.image-luxury-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(11, 44, 60, 0.5), transparent);
+}
+
+.image-luxury-tag {
+    position: absolute;
+    top: 40px;
+    left: 40px;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 0.8rem 2rem;
+    border-radius: 50px;
+    font-size: 0.8rem;
+    font-weight: 800;
+    color: var(--primary-color);
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    backdrop-filter: blur(5px);
+}
+
+/* Luxury Country Content */
+.country-luxury-header {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.country-serif-title {
+    font-family: var(--font-serif);
+    font-size: 4.5rem;
+    margin: 0;
+    color: var(--navy-deep);
+    line-height: 1;
+}
+
+.country-stat-badge {
+    background: var(--bg-light);
+    color: var(--primary-color);
+    padding: 0.6rem 1.5rem;
+    border-radius: 12px;
+    font-weight: 800;
+    font-size: 0.85rem;
+}
+
+.country-luxury-desc {
+    color: #666;
+    font-size: 1.25rem;
+    line-height: 1.8;
+    margin-bottom: 3.5rem;
+}
+
+.luxury-visa-box h5 {
+    font-size: 0.9rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    color: #222;
+    margin-bottom: 1.5rem;
+    letter-spacing: 2px;
+}
+
+.luxury-visa-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.2rem;
+    margin-bottom: 4rem;
+}
+
+.luxury-pill-item {
+    background: white;
+    border: 1px solid #e0e0e0;
+    padding: 0.8rem 1.8rem;
+    border-radius: 50px;
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #444;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    transition: all 0.3s ease;
+}
+
+.luxury-pill-item:hover {
+    border-color: var(--primary-color);
+    background: var(--bg-light);
+}
+
+.luxury-pill-item svg {
+    color: var(--primary-color);
+}
+
+.luxury-apply-btn {
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 1.5rem 3.5rem;
+    border-radius: 50px;
+    font-weight: 900;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+    cursor: pointer;
+    box-shadow: 0 20px 40px rgba(30, 77, 99, 0.2);
+}
+
+/* Intelligence Band */
+.intelligence-cta-band {
+    background: var(--navy-deep);
+    padding: 80px 0;
+    color: white;
+}
+
+.intelligence-grid {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5rem;
+}
+
+.intel-icon-box {
+    color: var(--accent-color);
+}
+
+.intel-text h3 {
+    font-family: var(--font-serif);
+    font-size: 2.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.intel-text p {
+    opacity: 0.7;
+    font-size: 1.1rem;
+}
+
+.intel-download-btn {
+    background: var(--accent-color);
+    color: var(--navy-deep);
+    border: none;
+    padding: 1.2rem 2.5rem;
+    border-radius: 50px;
+    font-weight: 900;
+    cursor: pointer;
+}
+
+/* Torn Edge Effect */
+.torn-edge {
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    background-color: white;
+    mask-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 100 10" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 10 L0 0 Q 5 2 10 0 Q 15 3 20 1 Q 25 4 30 1 Q 35 5 40 2 Q 45 6 50 3 Q 55 5 60 2 Q 65 4 70 1 Q 75 3 80 0 Q 85 2 90 0 Q 95 1 100 0 L100 10 Z" fill="black"/></svg>');
+    -webkit-mask-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 100 10" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 10 L0 0 Q 5 2 10 0 Q 15 3 20 1 Q 25 4 30 1 Q 35 5 40 2 Q 45 6 50 3 Q 55 5 60 2 Q 65 4 70 1 Q 75 3 80 0 Q 85 2 90 0 Q 95 1 100 0 L100 10 Z" fill="black"/></svg>');
+    mask-size: 100% 100%;
+    -webkit-mask-size: 100% 100%;
+}
+
+@media (max-width: 1200px) {
+    .hero-display-title { font-size: 4rem; }
+    .luxury-country-row { grid-template-columns: 1fr; gap: 5rem; }
+    .luxury-country-image { height: 450px; }
+    .country-serif-title { font-size: 3.5rem; }
+}
+
+@media (max-width: 768px) {
+    .hero-display-title { font-size: 3rem; }
+    .intelligence-grid { flex-direction: column; text-align: center; gap: 2rem; }
+    .country-serif-title { font-size: 2.8rem; }
+}

@@ -1,0 +1,269 @@
+.services-page-new {
+    background: #fff;
+    overflow-x: hidden;
+}
+
+/* Reusing Luxury Hero from About */
+.hero-section-cinematic {
+    height: 70vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--navy-deep);
+    text-align: center;
+}
+
+.hero-bg {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+}
+
+.hero-bg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.cinematic-overlay {
+    position: absolute;
+    inset: 0;
+    background: 
+        linear-gradient(to bottom, rgba(11, 44, 60, 0.3) 0%, rgba(255, 255, 255, 0.5) 40%, rgba(255, 255, 255, 0.6) 60%, rgba(11, 44, 60, 0.4) 100%),
+        linear-gradient(135deg, rgba(30, 77, 99, 0.2) 0%, transparent 50%, rgba(30, 77, 99, 0.15) 100%);
+}
+
+.hero-pill {
+    background: rgba(30, 77, 99, 0.05);
+    backdrop-filter: blur(10px);
+    padding: 0.6rem 2rem;
+    border-radius: 50px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 3px;
+    color: var(--primary-color);
+    border: 1px solid rgba(30, 77, 99, 0.1);
+    display: inline-block;
+    margin-bottom: 2rem;
+}
+
+.hero-display-title {
+    font-family: var(--font-serif);
+    font-size: 3.5rem;
+    line-height: 1.1;
+    font-weight: 900;
+}
+
+/* Premium Services Grid */
+.services-luxury-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    padding: 80px 0;
+}
+
+.luxury-service-card {
+    background: #fcfcfc;
+    border-radius: 20px;
+    border: 1px solid #eee;
+    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+    overflow: hidden;
+}
+
+.luxury-service-card:hover {
+    background: white;
+    transform: translateY(-12px);
+    box-shadow: 0 40px 80px rgba(30, 77, 99, 0.1);
+    border-color: var(--primary-color);
+}
+
+/* Card Image */
+.luxury-card-image-wrap {
+    width: 100%;
+    height: 180px;
+    overflow: hidden;
+}
+
+.luxury-card-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+.luxury-service-card:hover .luxury-card-image {
+    transform: scale(1.06);
+}
+
+.luxury-card-content {
+    padding: 1.25rem 1.5rem 1.5rem;
+}
+
+.card-luxury-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+
+.card-luxury-number {
+    font-family: var(--font-serif);
+    font-size: 1.5rem;
+    font-weight: 900;
+    color: #eee;
+}
+
+.card-luxury-title {
+    font-size: 1.3rem;
+    font-weight: 800;
+    color: var(--navy-deep);
+    margin-bottom: 0;
+}
+
+.card-luxury-desc {
+    color: #777;
+    font-size: 0.9rem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+.card-luxury-features {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 1rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5rem;
+}
+
+.card-luxury-features li {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #555;
+    display: flex;
+    align-items: center;
+}
+
+.card-luxury-features li::before {
+    content: '';
+    width: 8px;
+    height: 8px;
+    background: var(--primary-color);
+    border-radius: 50%;
+    margin-right: 12px;
+}
+
+.luxury-learn-more {
+    background: transparent;
+    border: none;
+    padding: 0;
+    font-weight: 800;
+    color: var(--primary-color);
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+/* Excellence Track */
+.excellence-track {
+    padding: 100px 0 120px;
+}
+
+.excellence-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 6rem;
+    margin-top: 5rem;
+}
+
+.excellence-item {
+    text-align: center;
+}
+
+.excellent-icon {
+    color: var(--primary-color);
+    margin-bottom: 2rem;
+}
+
+.excellence-item h4 {
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: var(--navy-deep);
+    margin-bottom: 1rem;
+}
+
+.excellence-item p {
+    color: #888;
+    line-height: 1.7;
+}
+
+/* Luxury CTA band */
+.luxury-cta-band {
+    background: var(--primary-color);
+    padding: 150px 0;
+    position: relative;
+    color: white;
+}
+
+.cta-overlay-gradient {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(45deg, rgba(11, 44, 60, 0.4), transparent);
+}
+
+.cta-serif-title {
+    font-family: var(--font-serif);
+    font-size: 4.5rem;
+    font-weight: 900;
+    margin-bottom: 2rem;
+}
+
+.cta-lead {
+    font-size: 1.4rem;
+    opacity: 0.8;
+    margin-bottom: 4rem;
+}
+
+.cta-btn-premium {
+    padding: 1.5rem 4rem;
+    background: white;
+    color: var(--primary-color);
+    border: none;
+    border-radius: 50px;
+    font-weight: 900;
+    font-size: 1.2rem;
+    cursor: pointer;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+}
+
+/* Torn Edge */
+.torn-edge {
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    background-color: white;
+    mask-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 100 10" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 10 L0 0 Q 5 2 10 0 Q 15 3 20 1 Q 25 4 30 1 Q 35 5 40 2 Q 45 6 50 3 Q 55 5 60 2 Q 65 4 70 1 Q 75 3 80 0 Q 85 2 90 0 Q 95 1 100 0 L100 10 Z" fill="black"/></svg>');
+    -webkit-mask-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 100 10" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 10 L0 0 Q 5 2 10 0 Q 15 3 20 1 Q 25 4 30 1 Q 35 5 40 2 Q 45 6 50 3 Q 55 5 60 2 Q 65 4 70 1 Q 75 3 80 0 Q 85 2 90 0 Q 95 1 100 0 L100 10 Z" fill="black"/></svg>');
+    mask-size: 100% 100%;
+    -webkit-mask-size: 100% 100%;
+}
+
+@media (max-width: 1024px) {
+    .hero-display-title { font-size: 4rem; }
+    .excellence-grid { grid-template-columns: 1fr; gap: 4rem; }
+    .cta-serif-title { font-size: 3rem; }
+}
+
+@media (max-width: 768px) {
+    .hero-display-title { font-size: 2.8rem; }
+    .luxury-card-content { padding: 1.5rem 1.5rem 2rem; }
+    .card-luxury-title { font-size: 1.8rem; }
+    .luxury-card-image-wrap { height: 200px; }
+}

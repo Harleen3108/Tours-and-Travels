@@ -1,0 +1,219 @@
+.contact-page-new {
+    background-color: #fcfcfc;
+    padding-bottom: 100px;
+}
+
+/* Contact Hero */
+.contact-hero {
+    height: 60vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+    overflow: hidden;
+    margin-bottom: 80px;
+}
+
+.contact-hero-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.contact-hero-bg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.contact-hero-bg .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(30, 77, 99, 0.8), rgba(30, 77, 99, 0.5));
+}
+
+.hero-text .label {
+    font-size: 0.8rem;
+    letter-spacing: 4px;
+    font-weight: 700;
+    display: block;
+    margin-bottom: 1.5rem;
+    color: var(--accent-color);
+}
+
+.hero-text .display-title {
+    font-family: var(--font-serif);
+    font-size: 3.2rem;
+    line-height: 1.1;
+    font-weight: 900;
+    color: var(--primary-color);
+}
+
+/* Layout */
+.contact-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6rem;
+    align-items: start;
+    margin-bottom: 100px;
+}
+
+.serif-title {
+    font-family: var(--font-serif);
+    font-size: 2.8rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.section-header p {
+    color: #666;
+    font-size: 1.1rem;
+    margin-bottom: 3rem;
+}
+
+.info-cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+}
+
+.info-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+    border: 1px solid #f0f0f0;
+    transition: all 0.3s ease;
+}
+
+.card-icon {
+    width: 50px;
+    height: 50px;
+    background: var(--bg-light);
+    color: var(--primary-color);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+}
+
+.info-card h4 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: #333;
+}
+
+.info-card p {
+    font-size: 0.85rem;
+    color: #777;
+    margin: 0;
+    line-height: 1.5;
+}
+
+/* Form Section */
+.form-container {
+    background: white;
+    padding: 3.5rem;
+    border-radius: 30px;
+    box-shadow: 0 30px 60px rgba(0,0,0,0.05);
+    border: 1px solid #f0f0f0;
+}
+
+.modern-form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+}
+
+.form-group.full {
+    grid-column: span 2;
+}
+
+.form-group input, 
+.form-group select, 
+.form-group textarea {
+    width: 100%;
+    padding: 1.2rem;
+    background: #f8f9fa;
+    border: 1.5px solid transparent;
+    border-radius: 12px;
+    font-family: inherit;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+}
+
+.form-group input:focus, 
+.form-group select:focus, 
+.form-group textarea:focus {
+    background: white;
+    border-color: var(--primary-color);
+    outline: none;
+    box-shadow: 0 5px 15px rgba(30, 77, 99, 0.05);
+}
+
+.submit-btn {
+    grid-column: span 2;
+    background: var(--primary-color);
+    color: white;
+    padding: 1.2rem;
+    border: none;
+    border-radius: 12px;
+    font-weight: 700;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.8rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 1rem;
+}
+
+.submit-btn:hover {
+    background: var(--navy-deep);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(30, 77, 99, 0.2);
+}
+
+/* Map */
+.map-frame {
+    height: 500px;
+    border-radius: 40px;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.05);
+}
+
+@media (max-width: 1024px) {
+    .contact-layout {
+        grid-template-columns: 1fr;
+        gap: 4rem;
+    }
+    .hero-text .display-title {
+        font-size: 3.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .modern-form {
+        grid-template-columns: 1fr;
+    }
+    .form-group.full {
+        grid-column: span 1;
+    }
+    .submit-btn {
+        grid-column: span 1;
+    }
+    .info-cards {
+        grid-template-columns: 1fr;
+    }
+}

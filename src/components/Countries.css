@@ -1,0 +1,31 @@
+.countries {
+    padding: 100px 0;
+}
+
+.countries-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.country-item {
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: var(--shadow);
+    border: 1px solid #eee;
+    transition: var(--transition);
+}
+
+.country-item:hover {
+    transform: translateY(-5px);
+    border-color: var(--primary-light);
+}
+
+.country-item span {
+    font-size: 2.5rem;
+    display: block;
+    margin-bottom: 1rem;
+}
