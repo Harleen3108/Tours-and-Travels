@@ -32,7 +32,7 @@ const ContactPage = () => {
             `*Message:* ${formData.message}`
         ].filter(Boolean).join('\n');
 
-        const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(text)}`;
+        const whatsappUrl = `https://wa.me/+919560657638?text=${encodeURIComponent(text)}`;
         window.open(whatsappUrl, '_blank');
     };
 
@@ -91,7 +91,7 @@ const ContactPage = () => {
                                 <div className="card-icon"><Phone size={24} /></div>
                                 <div>
                                     <h4>Call Us</h4>
-                                    <p>+91 7743040191</p>
+                                    <p>+91 95606 57638</p>
                                 </div>
                             </motion.div>
 

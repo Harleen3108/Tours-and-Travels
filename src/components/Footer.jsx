@@ -42,7 +42,7 @@ const Footer = () => {
                         <div className="footer-col">
                             <h4>Contact</h4>
                             <p>Email: info@toursandtravels.com</p>
-                            <p>Phone: +91 7743040191</p>
+                            <p>Phone: +91 95606 57638</p>
                         </div>
                     </div>
                 </div>
