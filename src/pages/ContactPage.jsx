@@ -106,8 +106,7 @@ const ContactPage = () => {
                                 <div className="card-icon"><Mail size={24} /></div>
                                 <div>
                                     <h4>Email Support</h4>
-                                    <p>info@toursandtravels.com</p>
-                                    <p>visa@toursandtravels.com</p>
+                                    <p>gurukripaimmigrations@gmail.com</p>
                                 </div>
                             </motion.div>
 

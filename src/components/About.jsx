@@ -13,9 +13,9 @@ const About = () => {
                         <h2 className="display-title">The perfect travel place for you & your family</h2>
                         <div className="happy-customers">
                             <div className="avatars">
-                                <img src="https://i.pravatar.cc/100?u=1" alt="user" />
-                                <img src="https://i.pravatar.cc/100?u=2" alt="user" />
-                                <img src="https://i.pravatar.cc/100?u=3" alt="user" />
+                                <img src="/customers/indian-1.jpg" alt="Indian customer" />
+                                <img src="/customers/indian-2.jpg" alt="Indian customer" />
+                                <img src="/customers/indian-3.jpg" alt="Indian customer" />
                                 <div className="avatar-more">50+</div>
                             </div>
                             <span className="customer-text">500k+ Happy customers</span>
