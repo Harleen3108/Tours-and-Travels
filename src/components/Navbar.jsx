@@ -21,7 +21,7 @@ const Navbar = () => {
                 <Link to="/" className="logo">
                     <img src={logo} alt="Tour and Travels Logo" />
                     <div className="brand-text">
-                        <span className="brand-name">Tour and Travels - Air Ticketing - Visa Services - Import Export</span>
+                        <span className="brand-name">Tour and Travels </span>
                         <span className="brand-tagline">Domestic and International</span>
                     </div>
                 </Link>
