@@ -26,9 +26,10 @@ const Footer = () => {
                         <div className="footer-col">
                             <h4>Services</h4>
                             <ul>
-                                <li><Link to="/services">Tours & Travels</Link></li>
-                                <li><Link to="/services">Visa Services</Link></li>
+                                <li><Link to="/services">Tour and Travels</Link></li>
                                 <li><Link to="/services">Air Ticketing</Link></li>
+                                <li><Link to="/services">Visa Services</Link></li>
+                                <li><Link to="/services">Import Export</Link></li>
                             </ul>
                         </div>
                         <div className="footer-col">
