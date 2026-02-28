@@ -32,7 +32,6 @@
     left: 0;
     width: 100%;
     height: 100%;
-    /* Darkened slightly for better text contrast on Laptop */
     background: linear-gradient(to bottom, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.2) 100%);
 }
 
@@ -56,7 +55,6 @@
 
 .hero-title {
     font-family: var(--font-serif);
-    /* Scales size automatically between mobile and laptop */
     font-size: clamp(2.2rem, 8vw, 4.5rem); 
     font-weight: 900;
     margin: 0;
@@ -71,6 +69,8 @@
     gap: 1.5rem;
     justify-content: center;
     width: 100%;
+    position: relative;
+    z-index: 10; /* Ensures buttons stay on top */
 }
 
 .btn-primary, .btn-secondary {
@@ -83,7 +83,7 @@
 }
 
 .btn-primary {
-    background-color: #004a7c; /* Replace with your theme blue */
+    background-color: #004a7c;
     color: white;
     border: 2px solid #004a7c;
 }
@@ -96,14 +96,13 @@
 
 /* --- Butterfly Marquee Section --- */
 .butterfly-wrapper {
-    /* Pushes text down so it doesn't touch buttons */
-    margin-top: clamp(3rem, 15vh, 6rem); 
+    margin-top: clamp(3rem, 12vh, 6rem); 
     width: 100%;
     overflow: hidden;
     white-space: nowrap;
     position: relative;
     display: flex;
-    /* Soft edges for the loop */
+    pointer-events: none; /* Allows clicks to pass through to buttons if they overlap */
     mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
     -webkit-mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
 }
@@ -111,7 +110,7 @@
 .butterfly-text {
     display: flex;
     width: max-content;
-    will-change: transform; /* Hardware acceleration to prevent lag */
+    will-change: transform;
 }
 
 .butterfly-text span {
@@ -121,7 +120,7 @@
     text-transform: uppercase;
     color: rgba(255, 255, 255, 0.9);
     text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
-    padding-right: 60px; /* Space between the repeating phrases */
+    padding-right: 60px;
     flex-shrink: 0;
 }
 
@@ -133,25 +132,24 @@
     width: 100%;
     height: 60px;
     background-color: white;
-    /* Clean custom clip-path for the torn look */
     clip-path: polygon(0% 100%, 100% 100%, 100% 0%, 90% 20%, 80% 0%, 70% 20%, 60% 0%, 50% 20%, 40% 0%, 30% 20%, 20% 0%, 10% 20%, 0% 0%);
 }
 
 /* --- Mobile Specific Fixes --- */
 @media (max-width: 768px) {
     .hero-btns {
-        flex-direction: column; /* Stacks buttons on top of each other */
+        flex-direction: column; 
         align-items: center;
         gap: 1rem;
         margin-top: 2rem;
     }
 
     .btn-primary, .btn-secondary {
-        width: 85%; /* Wider buttons for easy tapping */
+        width: 85%;
         text-align: center;
     }
 
     .butterfly-wrapper {
-        margin-top: 4rem; /* Specific spacing for mobile */
+        margin-top: 4rem; /* Specific spacing for mobile to prevent button collision */
     }
 }
