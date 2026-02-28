@@ -35,7 +35,8 @@
 }
 
 .hero-content {
-    margin-bottom: 4rem;
+    margin-bottom: 2rem;
+    width: 100%;
 }
 
 .hero-subtitle {
@@ -56,7 +57,60 @@
     line-height: 1.2;
 }
 
+.hero-btns {
+    margin-top: 2rem;
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+}
 
+.btn-secondary {
+    border: 2px solid white;
+    color: white;
+    padding: 0.8rem 2rem;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.btn-primary {
+    background: #004a7c; /* Adjust to your primary color */
+    color: white;
+    padding: 0.8rem 2rem;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+/* --- Butterfly Marquee Logic --- */
+.butterfly-wrapper {
+    margin-top: 5rem;
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    position: relative;
+    display: flex;
+    /* This creates a fade effect on edges */
+    mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+    -webkit-mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+}
+
+.butterfly-text {
+    display: flex;
+    width: max-content;
+    will-change: transform; /* Uses GPU to prevent lagging/hanging */
+}
+
+.butterfly-text span {
+    font-size: 1.2rem;
+    font-weight: 500;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.9);
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
+    padding-right: 80px; /* Space between loops */
+    flex-shrink: 0;
+}
 
 /* Torn Edge Effect */
 .torn-edge {
@@ -72,34 +126,13 @@
     -webkit-mask-size: 100% 100%;
 }
 
+/* Responsive Styles */
 @media (max-width: 1024px) {
-    .hero-title {
-        font-size: 3.5rem;
-    }
-    .booking-bar {
-        max-width: 90%;
-    }
+    .hero-title { font-size: 3.5rem; }
 }
 
 @media (max-width: 768px) {
-    .hero-title {
-        font-size: 2.5rem;
-        letter-spacing: 1px;
-    }
-    .booking-bar {
-        flex-direction: column;
-        border-radius: 20px;
-        padding: 1.5rem;
-        gap: 1.5rem;
-    }
-    .bar-item {
-        border-right: none;
-        border-bottom: 1px solid #eee;
-        padding: 0 0 0.5rem 0;
-        width: 100%;
-    }
-    .search-btn {
-        width: 100%;
-        border-radius: 10px;
-    }
+    .hero-title { font-size: 2.5rem; }
+    .butterfly-wrapper { margin-top: 3rem; }
+    .butterfly-text span { font-size: 0.9rem; padding-right: 40px; }
 }
