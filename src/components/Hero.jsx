@@ -17,9 +17,9 @@ const Hero = () => {
             <div className="container">
                 <motion.div 
                     className="hero-content"
-                    initial={{ opacity: 0, scale: 0.9 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    transition={{ duration: 1.2, ease: "easeOut" }}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 1 }}
                 >
                     <span className="hero-subtitle">FIND EXCITEMENT WHEREVER YOU GO</span>
                     <h1 className="hero-title">Explore the World <br /> With Confidence</h1>
@@ -29,11 +29,11 @@ const Hero = () => {
                         <Link to="/contact" className="btn-secondary">Contact Us</Link>
                     </div>
 
-                    {/* Fixed Butterfly Loop Section */}
+                    {/* Infinite Loop Section - FIXED KEYFRAMES */}
                     <div className="butterfly-wrapper">
                         <motion.div 
                             className="butterfly-text"
-                            animate={{ x: ["0%", "-50%"] }} // Both are now strings!
+                            animate={{ x: ["0%", "-50%"] }} 
                             transition={{ 
                                 repeat: Infinity, 
                                 duration: 25, 
@@ -47,7 +47,7 @@ const Hero = () => {
                 </motion.div>
             </div>
             
-            <div className="torn-edge top"></div>
+            <div className="torn-edge"></div>
         </section>
     );
 };
