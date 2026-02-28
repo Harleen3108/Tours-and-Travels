@@ -44,6 +44,15 @@
     align-items: center;
 }
 
+.hero-subtitle {
+    font-size: 0.9rem;
+    letter-spacing: 4px;
+    font-weight: 500;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+    opacity: 0.9;
+}
+
 .hero-title {
     font-family: var(--font-serif);
     font-size: clamp(2.2rem, 8vw, 4.5rem); 
@@ -52,7 +61,7 @@
     line-height: 1.1;
 }
 
-/* --- BUTTONS SECTION (SHORTER & CENTERED) --- */
+/* --- BUTTONS SECTION --- */
 .hero-btns {
     margin-top: 1.5rem;
     display: flex;
@@ -62,34 +71,44 @@
 }
 
 .btn-primary, .btn-secondary {
-    /* Shorter vertical padding (0.6rem) and compact horizontal padding (1.5rem) */
     padding: 0.6rem 1.5rem; 
     text-decoration: none;
-    border-radius: 4px; /* Slightly sharper corners for a premium look */
+    border-radius: 4px;
     font-weight: 600;
-    font-size: 0.9rem; /* Slightly smaller text for compact feel */
-    transition: 0.3s;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
     display: inline-block;
-    /* This prevents them from stretching too far */
-    width: auto; 
     min-width: 140px; 
 }
 
+/* Primary Button (Starts Filled) */
 .btn-primary {
-    background-color: #004a7c;
-    color: white;
-    border: 2px solid #004a7c;
+    background-color: #004a7c !important;
+    color: white !important;
+    border: 2px solid #004a7c !important;
 }
 
+.btn-primary:hover {
+    transform: translateY(-5px);
+}
+
+/* Secondary Button (Starts White Border, Fills on Hover/Click) */
 .btn-secondary {
-    border: 2px solid white;
-    color: white;
+    border: 2px solid #ffffff !important;
+    color: #ffffff !important;
     background: transparent !important;
+}
+
+.btn-secondary:hover, .btn-secondary:active {
+    background-color: #004a7c !important; 
+    border-color: #004a7c !important;
+    color: #ffffff !important;
+    transform: translateY(-5px);
 }
 
 /* --- MARQUEE SECTION --- */
 .butterfly-wrapper {
-    margin-top: 5rem; /* Large gap to prevent button overlap */
+    margin-top: 6rem;
     width: 100%;
     overflow: hidden;
     white-space: nowrap;
@@ -97,19 +116,22 @@
     display: flex;
     background: transparent !important;
     pointer-events: none;
+    mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+    -webkit-mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
 }
 
 .butterfly-text {
     display: flex;
     width: max-content;
+    will-change: transform;
 }
 
 .butterfly-text span {
     font-size: clamp(0.85rem, 2.5vw, 1.1rem);
     text-transform: uppercase;
-    padding-right: 50px;
+    padding-right: 60px;
     flex-shrink: 0;
-    opacity: 0.8;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
 }
 
 /* --- MOBILE SPECIFIC FIXES --- */
@@ -121,16 +143,14 @@
     }
 
     .btn-primary, .btn-secondary {
-        /* This "shorts" the button width on mobile */
         width: 60% !important; 
         max-width: 200px;
         min-width: 150px;
-        padding: 0.5rem 1rem !important; /* Even shorter on mobile */
+        padding: 0.6rem 1rem !important;
     }
 
     .butterfly-wrapper {
-        /* Ensures marquee stays way below the stacked buttons */
-        margin-top: 4.5rem !important; 
+        margin-top: 5rem !important; 
     }
 }
 

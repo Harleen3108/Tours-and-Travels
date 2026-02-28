@@ -24,23 +24,23 @@ const Hero = () => {
                     <span className="hero-subtitle">FIND EXCITEMENT WHEREVER YOU GO</span>
                     <h1 className="hero-title">Explore the World <br /> With Confidence</h1>
                     
-                    {/* Buttons are kept in their own container for better mobile stacking */}
                     <div className="hero-btns">
                         <Link to="/services" className="btn-primary">Explore Services</Link>
                         <Link to="/contact" className="btn-secondary">Contact Us</Link>
                     </div>
 
-                    {/* Infinite Butterfly Loop - Placed below buttons to avoid overlap */}
+                    {/* Butterfly Loop - Triple content to prevent blank space gap */}
                     <div className="butterfly-wrapper">
                         <motion.div 
                             className="butterfly-text"
-                            animate={{ x: ["0%", "-50%"] }} 
+                            animate={{ x: ["0%", "-33.33%"] }} 
                             transition={{ 
                                 repeat: Infinity, 
-                                duration: 25, 
+                                duration: 15, 
                                 ease: "linear" 
                             }}
                         >
+                            <span>Tour and Travels — Air Ticketing — Visa Services — Import Export — &nbsp;</span>
                             <span>Tour and Travels — Air Ticketing — Visa Services — Import Export — &nbsp;</span>
                             <span>Tour and Travels — Air Ticketing — Visa Services — Import Export — &nbsp;</span>
                         </motion.div>
