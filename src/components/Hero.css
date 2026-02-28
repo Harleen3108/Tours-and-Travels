@@ -45,8 +45,8 @@
 }
 
 .hero-subtitle {
-    font-size: 0.9rem;
-    letter-spacing: 4px;
+    font-size: clamp(0.7rem, 2.5vw, 0.9rem); 
+    letter-spacing: clamp(2px, 1vw, 4px);
     font-weight: 500;
     text-transform: uppercase;
     margin-bottom: 0.5rem;
@@ -81,18 +81,18 @@
     min-width: 140px; 
 }
 
-/* Primary Button (Starts Filled) */
+/* Explore Services (Dark Teal/Green) */
 .btn-primary {
-    background-color: #004a7c !important;
-    color: white !important;
-    border: 2px solid #004a7c !important;
+    background-color: #0b3d59 !important; /* The Deep Teal from your UI */
+    color: #ffffff !important;
+    border: 2px solid #0b3d59 !important;
 }
 
 .btn-primary:hover {
     transform: translateY(-5px);
 }
 
-/* Secondary Button (Starts White Border, Fills on Hover/Click) */
+/* Contact Us (Starts White, Turns Deep Teal on Hover) */
 .btn-secondary {
     border: 2px solid #ffffff !important;
     color: #ffffff !important;
@@ -100,13 +100,13 @@
 }
 
 .btn-secondary:hover, .btn-secondary:active {
-    background-color: #004a7c !important; 
-    border-color: #004a7c !important;
+    background-color: #0b3d59 !important; /* Fills with your branding teal */
+    border-color: #0b3d59 !important;
     color: #ffffff !important;
     transform: translateY(-5px);
 }
 
-/* --- MARQUEE SECTION --- */
+/* --- MARQUEE SECTION (NO GAP FIX) --- */
 .butterfly-wrapper {
     margin-top: 6rem;
     width: 100%;
@@ -123,7 +123,6 @@
 .butterfly-text {
     display: flex;
     width: max-content;
-    will-change: transform;
 }
 
 .butterfly-text span {
