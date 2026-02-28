@@ -1,5 +1,4 @@
-/* src/components/Hero.css */
-
+/* --- Base Styles --- */
 .hero {
     height: 100vh;
     width: 100%;
@@ -33,69 +32,78 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(to bottom, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.2) 100%);
+    /* Darkened slightly for better text contrast on Laptop */
+    background: linear-gradient(to bottom, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.2) 100%);
 }
 
 .hero-content {
-    margin-bottom: 2rem;
-    width: 100%;
     z-index: 2;
+    width: 100%;
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .hero-subtitle {
     font-size: 0.9rem;
     letter-spacing: 4px;
     font-weight: 500;
-    display: block;
+    text-transform: uppercase;
     margin-bottom: 1rem;
     opacity: 0.9;
 }
 
 .hero-title {
     font-family: var(--font-serif);
-    /* clamp(min, preferred, max) makes it responsive without extra media queries */
-    font-size: clamp(2.5rem, 8vw, 4.5rem); 
+    /* Scales size automatically between mobile and laptop */
+    font-size: clamp(2.2rem, 8vw, 4.5rem); 
     font-weight: 900;
     margin: 0;
-    letter-spacing: 2px;
-    line-height: 1.2;
+    letter-spacing: 1px;
+    line-height: 1.1;
 }
 
+/* --- Button Section (Fixed Overlap) --- */
 .hero-btns {
-    margin-top: 2rem;
+    margin-top: 2.5rem;
     display: flex;
     gap: 1.5rem;
     justify-content: center;
-    margin-bottom: 2rem;
+    width: 100%;
+}
+
+.btn-primary, .btn-secondary {
+    padding: 0.8rem 2rem;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+}
+
+.btn-primary {
+    background-color: #004a7c; /* Replace with your theme blue */
+    color: white;
+    border: 2px solid #004a7c;
 }
 
 .btn-secondary {
     border: 2px solid white;
     color: white;
-    padding: 0.8rem 2rem;
-    text-decoration: none;
-    border-radius: 5px;
-    transition: 0.3s;
+    background: transparent;
 }
 
-.btn-primary {
-    background: #004a7c;
-    color: white;
-    padding: 0.8rem 2rem;
-    text-decoration: none;
-    border-radius: 5px;
-    transition: 0.3s;
-}
-
-/* --- Butterfly Marquee Logic --- */
+/* --- Butterfly Marquee Section --- */
 .butterfly-wrapper {
-    margin-top: clamp(2rem, 10vh, 5rem); /* Adjusts position based on screen height */
+    /* Pushes text down so it doesn't touch buttons */
+    margin-top: clamp(3rem, 15vh, 6rem); 
     width: 100%;
     overflow: hidden;
     white-space: nowrap;
     position: relative;
     display: flex;
-    /* Softens the entry/exit of text */
+    /* Soft edges for the loop */
     mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
     -webkit-mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
 }
@@ -103,42 +111,47 @@
 .butterfly-text {
     display: flex;
     width: max-content;
-    will-change: transform; /* Hardware acceleration to prevent hanging */
+    will-change: transform; /* Hardware acceleration to prevent lag */
 }
 
 .butterfly-text span {
-    font-size: clamp(0.85rem, 2vw, 1.2rem); 
+    font-size: clamp(0.85rem, 2.5vw, 1.2rem);
     font-weight: 500;
     letter-spacing: 2px;
     text-transform: uppercase;
     color: rgba(255, 255, 255, 0.9);
     text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
-    padding-right: 60px; /* Space between loops */
+    padding-right: 60px; /* Space between the repeating phrases */
     flex-shrink: 0;
 }
 
-/* Torn Edge Effect */
+/* --- Torn Edge --- */
 .torn-edge {
     position: absolute;
-    bottom: -1px;
+    bottom: -2px;
     left: 0;
     width: 100%;
-    height: clamp(40px, 8vh, 80px);
+    height: 60px;
     background-color: white;
-    mask-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 100 10" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 10 L0 0 Q 5 2 10 0 Q 15 3 20 1 Q 25 4 30 1 Q 35 5 40 2 Q 45 6 50 3 Q 55 5 60 2 Q 65 4 70 1 Q 75 3 80 0 Q 85 2 90 0 Q 95 1 100 0 L100 10 Z" fill="black"/></svg>');
-    -webkit-mask-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 100 10" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 10 L0 0 Q 5 2 10 0 Q 15 3 20 1 Q 25 4 30 1 Q 35 5 40 2 Q 45 6 50 3 Q 55 5 60 2 Q 65 4 70 1 Q 75 3 80 0 Q 85 2 90 0 Q 95 1 100 0 L100 10 Z" fill="black"/></svg>');
-    mask-size: 100% 100%;
-    -webkit-mask-size: 100% 100%;
+    /* Clean custom clip-path for the torn look */
+    clip-path: polygon(0% 100%, 100% 100%, 100% 0%, 90% 20%, 80% 0%, 70% 20%, 60% 0%, 50% 20%, 40% 0%, 30% 20%, 20% 0%, 10% 20%, 0% 0%);
 }
 
-/* Final Mobile Tweaks */
+/* --- Mobile Specific Fixes --- */
 @media (max-width: 768px) {
     .hero-btns {
-        flex-direction: column;
+        flex-direction: column; /* Stacks buttons on top of each other */
         align-items: center;
         gap: 1rem;
+        margin-top: 2rem;
     }
+
     .btn-primary, .btn-secondary {
-        width: 80%;
+        width: 85%; /* Wider buttons for easy tapping */
+        text-align: center;
+    }
+
+    .butterfly-wrapper {
+        margin-top: 4rem; /* Specific spacing for mobile */
     }
 }
