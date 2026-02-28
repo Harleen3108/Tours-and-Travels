@@ -1,4 +1,4 @@
-/* --- Base Styles --- */
+/* --- Base Hero Styles --- */
 .hero {
     height: 100vh;
     width: 100%;
@@ -39,47 +39,33 @@
     z-index: 2;
     width: 100%;
     padding: 0 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.hero-subtitle {
-    font-size: 0.9rem;
-    letter-spacing: 4px;
-    font-weight: 500;
-    text-transform: uppercase;
-    margin-bottom: 1rem;
-    opacity: 0.9;
 }
 
 .hero-title {
     font-family: var(--font-serif);
-    font-size: clamp(2.2rem, 8vw, 4.5rem); 
+    font-size: clamp(2rem, 8vw, 4.5rem); 
     font-weight: 900;
-    margin: 0;
-    letter-spacing: 1px;
+    margin-bottom: 2rem;
     line-height: 1.1;
 }
 
-/* --- Button Section (Fixed Overlap) --- */
+/* --- Buttons Section: Fixed for Mobile --- */
 .hero-btns {
-    margin-top: 2.5rem;
     display: flex;
     gap: 1.5rem;
     justify-content: center;
-    width: 100%;
+    margin-bottom: 4rem; /* Pushes the marquee far away */
     position: relative;
-    z-index: 10; /* Ensures buttons stay on top */
+    z-index: 10; /* Keeps buttons above the marquee box */
 }
 
 .btn-primary, .btn-secondary {
-    padding: 0.8rem 2rem;
+    padding: 12px 30px;
     text-decoration: none;
     border-radius: 6px;
     font-weight: 600;
-    transition: all 0.3s ease;
-    white-space: nowrap;
+    transition: 0.3s;
+    display: inline-block;
 }
 
 .btn-primary {
@@ -91,18 +77,17 @@
 .btn-secondary {
     border: 2px solid white;
     color: white;
-    background: transparent;
 }
 
-/* --- Butterfly Marquee Section --- */
+/* --- Marquee: No Background, No Overlap --- */
 .butterfly-wrapper {
-    margin-top: clamp(3rem, 12vh, 6rem); 
     width: 100%;
     overflow: hidden;
     white-space: nowrap;
     position: relative;
     display: flex;
-    pointer-events: none; /* Allows clicks to pass through to buttons if they overlap */
+    background: transparent !important; /* Forces background to be invisible */
+    pointer-events: none; /* Clicking "through" the marquee to reach buttons */
     mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
     -webkit-mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
 }
@@ -110,46 +95,37 @@
 .butterfly-text {
     display: flex;
     width: max-content;
-    will-change: transform;
 }
 
 .butterfly-text span {
-    font-size: clamp(0.85rem, 2.5vw, 1.2rem);
-    font-weight: 500;
+    font-size: clamp(0.8rem, 2vw, 1.2rem);
     letter-spacing: 2px;
     text-transform: uppercase;
-    color: rgba(255, 255, 255, 0.9);
-    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
     padding-right: 60px;
-    flex-shrink: 0;
-}
-
-/* --- Torn Edge --- */
-.torn-edge {
-    position: absolute;
-    bottom: -2px;
-    left: 0;
-    width: 100%;
-    height: 60px;
-    background-color: white;
-    clip-path: polygon(0% 100%, 100% 100%, 100% 0%, 90% 20%, 80% 0%, 70% 20%, 60% 0%, 50% 20%, 40% 0%, 30% 20%, 20% 0%, 10% 20%, 0% 0%);
+    color: rgba(255, 255, 255, 0.9);
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
 }
 
 /* --- Mobile Specific Fixes --- */
 @media (max-width: 768px) {
     .hero-btns {
-        flex-direction: column; 
+        flex-direction: column; /* Stacks buttons vertically */
         align-items: center;
-        gap: 1rem;
-        margin-top: 2rem;
+        gap: 12px;
+        margin-bottom: 3rem;
     }
 
     .btn-primary, .btn-secondary {
-        width: 85%;
+        width: 80%; /* Makes buttons full width on phone */
         text-align: center;
     }
 
+    .hero-title {
+        font-size: 2.2rem;
+        padding: 0 10px;
+    }
+
     .butterfly-wrapper {
-        margin-top: 4rem; /* Specific spacing for mobile to prevent button collision */
+        margin-top: 1rem;
     }
 }

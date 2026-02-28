@@ -24,12 +24,13 @@ const Hero = () => {
                     <span className="hero-subtitle">FIND EXCITEMENT WHEREVER YOU GO</span>
                     <h1 className="hero-title">Explore the World <br /> With Confidence</h1>
                     
+                    {/* Buttons are kept in their own container for better mobile stacking */}
                     <div className="hero-btns">
                         <Link to="/services" className="btn-primary">Explore Services</Link>
                         <Link to="/contact" className="btn-secondary">Contact Us</Link>
                     </div>
 
-                    {/* Infinite Loop Section - FIXED KEYFRAMES */}
+                    {/* Infinite Butterfly Loop - Placed below buttons to avoid overlap */}
                     <div className="butterfly-wrapper">
                         <motion.div 
                             className="butterfly-text"
